@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>Website Booster — by Dr. S. Ahmad</title>
+<meta name="description" content="Free website check for small businesses in Pakistan: score your site out of 100, answer 8 honest questions, and get a personal 30-day boost plan. No sign-up needed." />
+<meta name="theme-color" content="#0e6b5c" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Website Booster — Free Website Check &amp; 30-Day Boost Plan" />
+<meta property="og:description" content="Score your website out of 100, answer 8 honest questions, and get a personal 30-day boost plan. Free, no sign-up needed." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Website Booster — Free Website Check &amp; 30-Day Boost Plan" />
+<meta name="twitter:description" content="Score your website out of 100, answer 8 honest questions, and get a personal 30-day boost plan. Free, no sign-up needed." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e6b5c'/%3E%3Cpath d='M18 34l10 10 18-22' stroke='white' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Website Booster","description":"Free website check for small businesses: score your site out of 100, answer 8 honest questions, and get a personal 30-day boost plan.","applicationCategory":"BusinessApplication","operatingSystem":"Any","author":{"@type":"Person","name":"Dr. S. Ahmad"},"offers":[{"@type":"Offer","name":"Starter","price":"4999","priceCurrency":"PKR"},{"@type":"Offer","name":"Growth","price":"9999","priceCurrency":"PKR"},{"@type":"Offer","name":"Business","price":"19999","priceCurrency":"PKR"}]}
+</script>
+<style>
+  :root{
+    --bg:#f6f7f5;
+    --surface:#ffffff;
+    --surface-2:#eef2ef;
+    --ink:#182420;
+    --ink-soft:#48564f;
+    --line:#d8dfda;
+    --accent:#0e6b5c;
+    --accent-strong:#095446;
+    --accent-soft:#e0efe9;
+    --amber:#b97d10;
+    --amber-soft:#faf0d7;
+    --red:#b3402e;
+    --red-soft:#f9e6e1;
+    --green:#23784a;
+    --green-soft:#e1f0e5;
+    --radius:14px;
+    --shadow:0 1px 3px rgba(20,35,28,.08), 0 8px 24px rgba(20,35,28,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#101613;
+      --surface:#181f1b;
+      --surface-2:#1f2823;
+      --ink:#e8edea;
+      --ink-soft:#a9b8b0;
+      --line:#2c3831;
+      --accent:#3fbfa5;
+      --accent-strong:#6fd3bc;
+      --accent-soft:#17352d;
+      --amber:#e0aa3e;
+      --amber-soft:#3a2f14;
+      --red:#e07a63;
+      --red-soft:#3d211b;
+      --green:#6fc48d;
+      --green-soft:#1c3324;
+      --shadow:0 1px 3px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:16px;line-height:1.55;
+  }
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:700;line-height:1.2;margin:0}
+  p{margin:0}
+  a{color:var(--accent)}
+  button,[role="button"],select,summary,input:not([type="checkbox"],[type="radio"]){min-height:2.25rem}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 18px}
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    background:var(--surface);border-bottom:1px solid var(--line);
+    padding:44px 0 38px;
+  }
+  .brandline{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    font-size:.85rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);
+  }
+  .brandline .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
+  header.hero h1{font-size:clamp(2rem,6vw,3.1rem);margin:14px 0 12px;max-width:16ch}
+  header.hero .lede{font-size:1.12rem;color:var(--ink-soft);max-width:56ch}
+  .hero-points{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+  .hero-points span{
+    background:var(--accent-soft);color:var(--accent-strong);
+    border-radius:999px;padding:7px 14px;font-size:.88rem;font-weight:600;
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:40px 0 8px}
+  .step-tag{
+    display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:8px;
+  }
+  section h2{font-size:clamp(1.5rem,4vw,2rem);margin-bottom:8px}
+  .section-intro{color:var(--ink-soft);max-width:62ch;margin-bottom:22px}
+
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:24px;
+  }
+
+  /* ---------- URL check ---------- */
+  .url-row{display:flex;gap:10px;flex-wrap:wrap}
+  .url-row input[type="url"],.url-row input[type="text"]{
+    flex:1 1 260px;padding:12px 14px;font-size:1rem;border:1.5px solid var(--line);
+    border-radius:10px;background:var(--bg);color:var(--ink);
+  }
+  .url-row input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+  .btn{
+    appearance:none;border:none;cursor:pointer;border-radius:10px;
+    padding:12px 22px;font-size:1rem;font-weight:700;
+    background:var(--accent);color:#fff;min-height:48px;
+    transition:background .15s ease;
+  }
+  .btn:hover{background:var(--accent-strong)}
+  .btn:disabled{opacity:.55;cursor:wait}
+  .btn.secondary{background:var(--surface);color:var(--accent);border:1.5px solid var(--accent)}
+  .btn.secondary:hover{background:var(--accent-soft)}
+  .honest-note{
+    margin-top:14px;font-size:.9rem;color:var(--ink-soft);
+    background:var(--surface-2);border-radius:10px;padding:12px 14px;
+  }
+  #url-results{margin-top:20px;display:none}
+  #url-results.show{display:block}
+  .check-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .check-item{
+    display:flex;gap:12px;align-items:flex-start;
+    border:1px solid var(--line);border-radius:10px;padding:13px 15px;background:var(--bg);
+  }
+  .check-item .ic{
+    flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+    font-size:.85rem;font-weight:800;margin-top:1px;
+  }
+  .ic.pass{background:var(--green-soft);color:var(--green)}
+  .ic.fail{background:var(--red-soft);color:var(--red)}
+  .ic.warn{background:var(--amber-soft);color:var(--amber)}
+  .check-item strong{display:block;font-size:.98rem}
+  .check-item small{color:var(--ink-soft);font-size:.88rem}
+
+  /* ---------- Self audit ---------- */
+  .q-list{display:grid;gap:12px}
+  .q-item{
+    border:1px solid var(--line);border-radius:10px;padding:16px;background:var(--bg);
+    display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  }
+  .q-item .q-text{flex:1 1 300px}
+  .q-item .q-text strong{display:block;font-size:1rem}
+  .q-item .q-text small{color:var(--ink-soft);font-size:.88rem}
+  .yn{display:flex;gap:8px;flex:none}
+  .yn button{
+    min-width:64px;min-height:44px;padding:9px 16px;border-radius:9px;cursor:pointer;
+    border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font-weight:700;font-size:.95rem;
+  }
+  .yn button[aria-pressed="true"].yes{background:var(--accent);border-color:var(--accent);color:#fff}
+  .yn button[aria-pressed="true"].no{background:var(--red);border-color:var(--red);color:#fff}
+  .audit-actions{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .audit-hint{font-size:.9rem;color:var(--ink-soft)}
+
+  /* ---------- Results ---------- */
+  #results{display:none;margin-top:26px}
+  #results.show{display:block}
+  .score-head{display:flex;gap:26px;flex-wrap:wrap;align-items:center}
+  .gauge{flex:none;width:150px;height:150px;position:relative}
+  .gauge svg{transform:rotate(-90deg)}
+  .gauge .num{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  }
+  .gauge .num b{font-size:2.3rem;line-height:1;font-family:Georgia,serif}
+  .gauge .num span{font-size:.78rem;color:var(--ink-soft)}
+  .grade-box{flex:1 1 260px}
+  .grade-pill{
+    display:inline-block;padding:6px 14px;border-radius:999px;font-weight:700;font-size:.92rem;margin-bottom:8px;
+  }
+  .grade-pill.strong{background:var(--green-soft);color:var(--green)}
+  .grade-pill.boost{background:var(--amber-soft);color:var(--amber)}
+  .grade-pill.urgent{background:var(--red-soft);color:var(--red)}
+  .grade-box p{color:var(--ink-soft)}
+  .breakdown{margin-top:24px;display:grid;gap:12px}
+  .bd-row{display:grid;grid-template-columns:170px 1fr 52px;gap:12px;align-items:center;font-size:.93rem}
+  .bd-row .bar{height:10px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+  .bd-row .bar i{display:block;height:100%;border-radius:99px;background:var(--accent);transition:width .6s ease}
+  .bd-row .bar i.low{background:var(--red)}
+  .bd-row .bar i.mid{background:var(--amber)}
+  .bd-row .pts{text-align:right;font-weight:700;color:var(--ink-soft)}
+  @media (max-width:560px){.bd-row{grid-template-columns:120px 1fr 46px}}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+  @media (max-width:720px){.two-col{grid-template-columns:1fr}}
+  .panel{border:1px solid var(--line);border-radius:10px;padding:18px;background:var(--bg)}
+  .panel h3{font-size:1.08rem;margin-bottom:12px}
+  .panel ul{margin:0;padding-left:20px;display:grid;gap:8px;font-size:.95rem}
+  .panel ul li::marker{color:var(--accent)}
+  .week{margin-bottom:12px}
+  .week:last-child{margin-bottom:0}
+  .week strong{display:block;font-size:.95rem;color:var(--accent-strong)}
+  .week span{font-size:.93rem;color:var(--ink-soft)}
+  .all-good{font-size:.95rem;color:var(--ink-soft)}
+
+  /* ---------- Pricing ---------- */
+  .price-note{font-size:.9rem;color:var(--ink-soft);margin-top:6px}
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
+  @media (max-width:820px){.tiers{grid-template-columns:1fr}}
+  .tier{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 22px;display:flex;flex-direction:column;box-shadow:var(--shadow);position:relative;
+  }
+  .tier.featured{border:2px solid var(--accent)}
+  .tier .pop{
+    position:absolute;top:-13px;left:22px;background:var(--accent);color:#fff;
+    font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:4px 12px;border-radius:999px;
+  }
+  .tier h3{font-size:1.25rem}
+  .tier .price{font-family:Georgia,serif;font-size:2rem;margin:10px 0 2px}
+  .tier .price small{font-size:.85rem;font-family:inherit;color:var(--ink-soft)}
+  .tier .tagline{color:var(--ink-soft);font-size:.93rem;margin-bottom:16px}
+  .tier ul{margin:0 0 22px;padding-left:20px;display:grid;gap:8px;font-size:.95rem}
+  .tier ul li::marker{color:var(--accent)}
+  .tier .btn{margin-top:auto;text-align:center;width:100%}
+
+  /* ---------- FAQ ---------- */
+  .faq details{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-bottom:10px;
+  }
+  .faq summary{cursor:pointer;padding:16px 18px;font-weight:700;font-size:1rem;min-height:48px}
+  .faq details p{padding:0 18px 16px;color:var(--ink-soft);font-size:.95rem}
+
+  /* ---------- Enquiry dialog ---------- */
+  dialog{
+    border:1px solid var(--line);border-radius:16px;background:var(--surface);color:var(--ink);
+    max-width:480px;width:calc(100% - 32px);padding:0;box-shadow:0 24px 60px rgba(0,0,0,.25);
+  }
+  dialog::backdrop{background:rgba(10,20,15,.55)}
+  .dlg-body{padding:26px}
+  .dlg-body h3{font-size:1.35rem;margin-bottom:6px}
+  .dlg-body .sub{color:var(--ink-soft);font-size:.93rem;margin-bottom:18px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px}
+  .field input,.field select{
+    width:100%;padding:12px;font-size:1rem;border:1.5px solid var(--line);border-radius:9px;
+    background:var(--bg);color:var(--ink);min-height:48px;
+  }
+  .field input:focus,.field select:focus{outline:2px solid var(--accent);outline-offset:1px}
+  .dlg-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+  .dlg-actions .btn{flex:1}
+  .dlg-note{font-size:.85rem;color:var(--ink-soft);margin-top:14px}
+  .err{color:var(--red);font-size:.88rem;margin-top:6px;display:none}
+
+  footer{
+    margin-top:52px;border-top:1px solid var(--line);background:var(--surface);
+    padding:28px 0 36px;color:var(--ink-soft);font-size:.92rem;
+  }
+  footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
+
+  /* ---------- Print: clean score & checklist ---------- */
+  @media print{
+    body{background:#fff}
+    .btn, dialog, .hero-points, #pricing, .faq{display:none !important}
+    .card, .tier{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brandline"><span class="dot"></span> Website Booster — by Dr. S. Ahmad</div>
+    <h1>Your website should be bringing you customers.</h1>
+    <p class="lede">Most small business websites in Pakistan lose customers quietly — they load slowly on phones, don't show up on Google, or hide the phone number. Run the free check below, see exactly where your site stands, and get a clear plan to fix it.</p>
+    <div class="hero-points">
+      <span>Free instant check</span>
+      <span>Score out of 100</span>
+      <span>Personal 30-day boost plan</span>
+      <span>No sign-up needed</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- STEP 1 : URL CHECK -->
+  <section id="check">
+    <span class="step-tag">Step 1 · Free check</span>
+    <h2>Check your website address</h2>
+    <p class="section-intro">Enter your website address. We run a few quick checks right here in your browser — on the address itself and whether the site answers at all.</p>
+    <div class="card">
+      <form class="url-row" id="url-form">
+        <input type="text" id="url-input" inputmode="url" autocomplete="url" placeholder="e.g. www.yourshop.pk" aria-label="Your website address" />
+        <button class="btn" type="submit" id="url-btn">Check my website</button>
+      </form>
+      <p class="honest-note"><strong>What this check is — and isn't:</strong> it looks at your website's address (secure connection, length, structure) and tries to reach the site from your browser. It does <em>not</em> crawl or scan your pages — no free instant tool honestly can. The short self-audit in Step 2 covers the things that need your eyes, and together they give you a fair score.</p>
+      <div id="url-results">
+        <ul class="check-list" id="check-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2 : SELF AUDIT -->
+  <section id="audit">
+    <span class="step-tag">Step 2 · Quick self-audit</span>
+    <h2>Answer 8 honest questions</h2>
+    <p class="section-intro">Think about your website as a customer sees it. Answer honestly — the score and plan are only useful if they're true.</p>
+    <div class="card">
+      <div class="q-list" id="q-list"></div>
+      <div class="audit-actions">
+        <button class="btn" id="score-btn" type="button">See my score &amp; boost plan</button>
+        <span class="audit-hint" id="audit-hint">Answer all 8 questions to unlock your score.</span>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results" aria-live="polite">
+        <div class="score-head">
+          <div class="gauge">
+            <svg width="150" height="150" viewBox="0 0 150 150" role="img" aria-label="Website score gauge">
+              <circle cx="75" cy="75" r="64" fill="none" stroke="var(--surface-2)" stroke-width="13"/>
+              <circle id="gauge-arc" cx="75" cy="75" r="64" fill="none" stroke="var(--accent)" stroke-width="13"
+                      stroke-linecap="round" stroke-dasharray="402" stroke-dashoffset="402"/>
+            </svg>
+            <div class="num"><b id="score-num">0</b><span>out of 100</span></div>
+          </div>
+          <div class="grade-box">
+            <span class="grade-pill" id="grade-pill"></span>
+            <p id="grade-text"></p>
+          </div>
+        </div>
+
+        <div class="breakdown" id="breakdown"></div>
+
+        <div class="two-col">
+          <div class="panel">
+            <h3>Your personal boost checklist</h3>
+            <ul id="boost-list"></ul>
+            <p class="all-good" id="boost-empty" style="display:none">Nothing weak spotted — your basics are in place. The plan on the right will help you push further.</p>
+          </div>
+          <div class="panel">
+            <h3>Your 30-day boost plan</h3>
+            <div id="plan"></div>
+          </div>
+        </div>
+
+        <div class="audit-actions">
+          <button class="btn" type="button" id="cta-order">Get this done for me</button>
+          <button class="btn secondary" type="button" id="copy-btn">Copy my checklist</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <span class="step-tag">Done-for-you service</span>
+    <h2>Want it fixed for you? Pick a boost package</h2>
+    <p class="section-intro">You run your business; we do the website work. Every package starts with a full review of your site and ends with a plain-language report of what was done.</p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Starter</h3>
+        <div class="price">PKR 4,999</div>
+        <p class="tagline">Know exactly what's wrong and what to fix first.</p>
+        <ul>
+          <li>Full website audit report</li>
+          <li>Prioritised fix list, in plain language</li>
+          <li>Covers speed, mobile, SEO &amp; contact basics</li>
+          <li>Delivered within 3 working days</li>
+        </ul>
+        <button class="btn secondary order-btn" data-tier="Starter — PKR 4,999">Order Starter</button>
+      </div>
+      <div class="tier featured">
+        <span class="pop">Recommended</span>
+        <h3>Growth</h3>
+        <div class="price">PKR 9,999</div>
+        <p class="tagline">We fix the important pages and get you found on Google.</p>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>On-page SEO fixes (titles, descriptions, headings)</li>
+          <li>Google Business Profile set up or cleaned up</li>
+          <li>Contact &amp; WhatsApp buttons made easy to find</li>
+        </ul>
+        <button class="btn order-btn" data-tier="Growth — PKR 9,999">Order Growth</button>
+      </div>
+      <div class="tier">
+        <h3>Business</h3>
+        <div class="price">PKR 19,999</div>
+        <p class="tagline">The full boost — faster site plus a month of momentum.</p>
+        <ul>
+          <li>Everything in Growth</li>
+          <li>Speed optimisation for mobile visitors</li>
+          <li>4 weeks of content &amp; social media help</li>
+          <li>End-of-month results report</li>
+        </ul>
+        <button class="btn secondary order-btn" data-tier="Business — PKR 19,999">Order Business</button>
+      </div>
+    </div>
+    <p class="price-note">Prices are in Pakistani Rupees and may be adjusted by the owner — the confirmed price is always agreed with you before any work begins. No online payment here: ordering simply sends an enquiry, and payment is arranged personally afterwards.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <span class="step-tag">Questions</span>
+    <h2>Frequently asked questions</h2>
+    <p class="section-intro"></p>
+    <details>
+      <summary>What does the free check actually do?</summary>
+      <p>It checks your website's address in your own browser: whether it uses a secure HTTPS connection, whether the address is short and clean, and whether the site responds. Then the 8-question self-audit covers the things only a human looking at the site can judge — mobile-friendliness, speed, Google presence, contact details and more. It does not crawl your pages or access anything private, and your answers stay on your device.</p>
+    </details>
+    <details>
+      <summary>How long does a paid boost take?</summary>
+      <p>Starter audit reports are delivered within 3 working days. Growth usually takes 1–2 weeks, depending on access to your website. Business runs over about 4 weeks, because it includes a month of content and social media help plus a final results report.</p>
+    </details>
+    <details>
+      <summary>What do you need from me to start?</summary>
+      <p>Three things: your website address, login access to your website (shared safely once we agree the work), and a WhatsApp number where we can reach you. If Google Business Profile work is included, you may also need to verify your business with Google — we'll guide you through that step by step.</p>
+    </details>
+    <details>
+      <summary>Will this guarantee more customers?</summary>
+      <p>No honest service can guarantee customers. What a boost does guarantee is that the things silently turning visitors away — a slow or confusing site, missing contact details, invisibility on Google — get found and fixed, so the traffic you already get has a real chance to become enquiries.</p>
+    </details>
+    <details>
+      <summary>How do I pay?</summary>
+      <p>Send an enquiry using any Order button. You'll get a reply confirming the work and the price, and payment details (bank transfer, Easypaisa or JazzCash) are shared personally at that point. Nothing is charged automatically.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><strong>Website Booster</strong> — a service by Dr. S. Ahmad, for small businesses across Pakistan.</span>
+    <span>More free tools by Dr. S. Ahmad: <a href="https://drsahmad.github.io/">drsahmad.github.io</a></span>
+    <span>Enquiries: <a href="mailto:nobleinterestinternational@gmail.com">nobleinterestinternational@gmail.com</a></span>
+  </div>
+</footer>
+
+<!-- ENQUIRY DIALOG -->
+<dialog id="enquiry">
+  <div class="dlg-body">
+    <h3>Order your boost</h3>
+    <p class="sub">Fill this in and your email app will open with the enquiry ready to send. No payment is taken now.</p>
+    <form id="enquiry-form" method="dialog">
+      <div class="field">
+        <label for="f-name">Your name</label>
+        <input id="f-name" type="text" autocomplete="name" placeholder="e.g. Ahmed Raza" />
+      </div>
+      <div class="field">
+        <label for="f-whatsapp">WhatsApp number</label>
+        <input id="f-whatsapp" type="tel" autocomplete="tel" placeholder="e.g. 03xx xxxxxxx" />
+      </div>
+      <div class="field">
+        <label for="f-site">Your website address</label>
+        <input id="f-site" type="text" inputmode="url" placeholder="e.g. www.yourshop.pk" />
+      </div>
+      <div class="field">
+        <label for="f-tier">Package</label>
+        <select id="f-tier">
+          <option>Starter — PKR 4,999</option>
+          <option>Growth — PKR 9,999</option>
+          <option>Business — PKR 19,999</option>
+          <option>Not sure yet — advise me</option>
+        </select>
+      </div>
+      <p class="err" id="form-err">Please fill in your name, WhatsApp number and website address.</p>
+      <div class="dlg-actions">
+        <button class="btn secondary" type="button" id="dlg-cancel">Cancel</button>
+        <button class="btn" type="submit" id="dlg-send">Send enquiry by email</button>
+      </div>
+      <p class="dlg-note">This opens your email app addressed to Dr. S. Ahmad's office. If email isn't set up on this device, write to nobleinterestinternational@gmail.com directly with the same details.</p>
+    </form>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============ STEP 1 : URL CHECKS ============ */
+  var urlState = { https:null, clean:null, reach:null, raw:"" };
+
+  var urlForm = document.getElementById('url-form');
+  var urlInput = document.getElementById('url-input');
+  var urlBtn = document.getElementById('url-btn');
+  var urlResults = document.getElementById('url-results');
+  var checkList = document.getElementById('check-list');
+
+  function normalise(raw){
+    raw = (raw||"").trim();
+    if(!raw) return null;
+    if(!/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(raw)) raw = "https://" + raw;
+    try { return new URL(raw); } catch(e){ return null; }
+  }
+
+  function checkItem(status, title, detail){
+    var li = document.createElement('li');
+    li.className = 'check-item';
+    var icon = status === 'pass' ? '✓' : (status === 'fail' ? '✕' : '!');
+    li.innerHTML = '<span class="ic ' + status + '">' + icon + '</span><div><strong></strong><small></small></div>';
+    li.querySelector('strong').textContent = title;
+    li.querySelector('small').textContent = detail;
+    return li;
+  }
+
+  urlForm.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var u = normalise(urlInput.value);
+    checkList.innerHTML = '';
+    urlResults.classList.add('show');
+    if(!u){
+      urlState = { https:null, clean:null, reach:null, raw:"" };
+      checkList.appendChild(checkItem('fail','That address doesn\'t look right',
+        'Check the spelling and try again — e.g. www.yourshop.pk'));
+      return;
+    }
+    urlState.raw = u.href;
+
+    /* HTTPS */
+    if(u.protocol === 'https:'){
+      urlState.https = true;
+      checkList.appendChild(checkItem('pass','Secure connection (HTTPS)',
+        'Your site uses HTTPS. Browsers and Google trust it, and visitors aren\'t warned away.'));
+    } else {
+      urlState.https = false;
+      checkList.appendChild(checkItem('fail','No secure connection (HTTP only)',
+        'Your site still uses plain HTTP. Browsers label it "Not secure", which scares customers off. Ask your host for a free SSL certificate.'));
+    }
+
+    /* Length & structure */
+    var hostPath = u.hostname + u.pathname;
+    var issues = [];
+    if(hostPath.length > 45) issues.push('the address is long');
+    if(u.search.length > 1) issues.push('it carries extra tracking codes (?…)');
+    if(u.hostname.split('.').length > 3) issues.push('it uses a sub-domain'); /* 3 labels (e.g. example.co.uk, shop.example.pk) are fine — only deeper sub-domains are flagged */
+    if(/_/.test(u.pathname)) issues.push('it uses underscores');
+    if(issues.length === 0){
+      urlState.clean = true;
+      checkList.appendChild(checkItem('pass','Short, clean address',
+        'Easy to read, remember, share on WhatsApp and print on a shop banner.'));
+    } else if(issues.length === 1){
+      urlState.clean = 'partial';
+      checkList.appendChild(checkItem('warn','Address could be cleaner',
+        'Mostly fine, but ' + issues[0] + '. Shorter, simpler addresses get shared and remembered more.'));
+    } else {
+      urlState.clean = false;
+      checkList.appendChild(checkItem('fail','Address is messy',
+        'Problems: ' + issues.join('; ') + '. A clean address builds trust and shares better.'));
+    }
+
+    /* Reachability (honest attempt) */
+    var reachLi = checkItem('warn','Checking whether the site answers…',
+      'Trying to reach ' + u.hostname + ' from your browser now.');
+    checkList.appendChild(reachLi);
+    urlState.reach = null;
+    urlBtn.disabled = true;
+
+    var done = false;
+    var timer = setTimeout(function(){
+      if(done) return; done = true;
+      urlState.reach = 'unknown';
+      urlBtn.disabled = false;
+      reachLi.querySelector('.ic').className = 'ic warn';
+      reachLi.querySelector('.ic').textContent = '!';
+      reachLi.querySelector('strong').textContent = 'Couldn\'t confirm from here';
+      reachLi.querySelector('small').textContent = 'The site didn\'t answer within 6 seconds from this browser. It may be slow, down, or blocking checks like this — worth verifying yourself by opening it on your phone.';
+    }, 6000);
+
+    fetch(u.href, { mode:'no-cors', cache:'no-store' }).then(function(){
+      if(done) return; done = true;
+      clearTimeout(timer);
+      urlState.reach = true;
+      urlBtn.disabled = false;
+      reachLi.querySelector('.ic').className = 'ic pass';
+      reachLi.querySelector('.ic').textContent = '✓';
+      reachLi.querySelector('strong').textContent = 'Site is reachable';
+      reachLi.querySelector('small').textContent = u.hostname + ' answered from your browser. (This confirms it responds — it can\'t measure the site\'s true speed.)';
+    }).catch(function(){
+      if(done) return; done = true;
+      clearTimeout(timer);
+      urlState.reach = 'unknown';
+      urlBtn.disabled = false;
+      reachLi.querySelector('.ic').className = 'ic warn';
+      reachLi.querySelector('.ic').textContent = '!';
+      reachLi.querySelector('strong').textContent = 'Couldn\'t confirm from here';
+      reachLi.querySelector('small').textContent = 'Your browser couldn\'t reach the site. Some sites block checks like this, so this isn\'t proof it\'s down — but do open it on your phone to be sure it loads.';
+    });
+  });
+
+  /* ============ STEP 2 : SELF AUDIT ============ */
+  var QUESTIONS = [
+    { id:'mobile', area:'Mobile & Speed', pts:12,
+      q:'Does your website look good and work properly on a mobile phone?',
+      hint:'Most of your customers in Pakistan will visit on a phone, not a computer.',
+      fix:'Make the site mobile-friendly: readable text without zooming, buttons big enough to tap, nothing cut off on a phone screen.' },
+    { id:'speed', area:'Mobile & Speed', pts:11,
+      q:'Does your website open within about 3 seconds on mobile data?',
+      hint:'Try it on your own phone with Wi-Fi off. Slow sites lose visitors fast.',
+      fix:'Speed the site up: compress large images, remove heavy extras, and use faster hosting — most small sites can load in under 3 seconds.' },
+    { id:'gbp', area:'Search & Google', pts:11,
+      q:'Do you have a Google Business Profile (your business on Google Maps)?',
+      hint:'It\'s the free listing that shows your shop when people search "near me".',
+      fix:'Create or claim your free Google Business Profile so you appear on Google Search and Maps with your hours, photos and reviews.' },
+    { id:'meta', area:'Search & Google', pts:10,
+      q:'Does every important page have a clear title and short description for Google?',
+      hint:'These are the lines Google shows in search results — they decide whether people click.',
+      fix:'Write a proper page title and meta description for each key page: what you sell, where, and why choose you — in one or two lines.' },
+    { id:'contact', area:'Contact & Social', pts:11,
+      q:'Can a visitor find your phone / WhatsApp number within 5 seconds?',
+      hint:'If customers have to hunt for how to reach you, most simply leave.',
+      fix:'Put your phone number and a tap-to-chat WhatsApp button at the top of every page and on the contact page.' },
+    { id:'fresh', area:'Content & Tracking', pts:7,
+      q:'Have you added or updated anything on the site in the last 3 months?',
+      hint:'Fresh content tells both Google and customers that the business is alive.',
+      fix:'Update the site at least monthly: new photos, offers, prices, or a short news post — Google rewards active sites.' },
+    { id:'social', area:'Contact & Social', pts:6,
+      q:'Does your website link to your Facebook / Instagram pages?',
+      hint:'Customers check social pages to decide whether a business is real and active.',
+      fix:'Add clear links (and icons) to your Facebook and Instagram pages, and link back to the website from those pages.' },
+    { id:'analytics', area:'Content & Tracking', pts:7,
+      q:'Do you have Google Analytics (or similar) installed to see your visitors?',
+      hint:'Without it, you can\'t tell how many people visit or where they come from.',
+      fix:'Install Google Analytics (free) so you can see visitor numbers, popular pages and where enquiries come from.' }
+  ];
+
+  var answers = {}; /* id -> true(yes)/false(no) */
+  var qList = document.getElementById('q-list');
+
+  QUESTIONS.forEach(function(item){
+    var div = document.createElement('div');
+    div.className = 'q-item';
+    var left = document.createElement('div');
+    left.className = 'q-text';
+    var st = document.createElement('strong'); st.textContent = item.q;
+    var sm = document.createElement('small'); sm.textContent = item.hint;
+    left.appendChild(st); left.appendChild(sm);
+    var yn = document.createElement('div');
+    yn.className = 'yn';
+    ['Yes','No'].forEach(function(label){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = label;
+      b.className = label === 'Yes' ? 'yes' : 'no';
+      b.setAttribute('aria-pressed','false');
+      b.addEventListener('click', function(){
+        answers[item.id] = (label === 'Yes');
+        yn.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+        b.setAttribute('aria-pressed','true');
+        updateHint();
+      });
+      yn.appendChild(b);
+    });
+    div.appendChild(left); div.appendChild(yn);
+    qList.appendChild(div);
+  });
+
+  var hintEl = document.getElementById('audit-hint');
+  function updateHint(){
+    var n = Object.keys(answers).length;
+    if(urlState.https === null){
+      hintEl.textContent = n < 8
+        ? ('Answered ' + n + ' of 8 — and run the Step 1 website check above for the full score.')
+        : 'All questions answered — run the Step 1 website check above too, for the full score.';
+    } else {
+      hintEl.textContent = n < 8 ? ('Answered ' + n + ' of 8 questions.') : 'All answered — your score is ready.';
+    }
+  }
+
+  /* ============ SCORING ============ */
+  var resultsEl = document.getElementById('results');
+
+  function areaScores(){
+    var areas = [
+      { name:'Security & Setup', max:17, got:0 },
+      { name:'Address Quality', max:8, got:0 },
+      { name:'Mobile & Speed', max:23, got:0 },
+      { name:'Search & Google', max:21, got:0 },
+      { name:'Contact & Social', max:17, got:0 },
+      { name:'Content & Tracking', max:14, got:0 }
+    ];
+    /* URL checks */
+    if(urlState.https === true) areas[0].got += 10;
+    if(urlState.reach === true) areas[0].got += 7;
+    else if(urlState.reach === 'unknown') areas[0].got += 3;
+    if(urlState.clean === true) areas[1].got += 8;
+    else if(urlState.clean === 'partial') areas[1].got += 5;
+    /* Questions */
+    QUESTIONS.forEach(function(item){
+      if(answers[item.id] === true){
+        for(var i=0;i<areas.length;i++){ if(areas[i].name === item.area){ areas[i].got += item.pts; break; } }
+      }
+    });
+    return areas;
+  }
+
+  function weakItems(){
+    var weak = [];
+    if(urlState.https === false) weak.push({ week:1, text:'Switch the site to HTTPS (secure connection) — ask your host for a free SSL certificate; browsers currently warn visitors away.' });
+    if(urlState.reach === 'unknown') weak.push({ week:1, text:'Check why the site didn\'t answer from a browser — open it on your phone on mobile data and confirm it loads; if not, contact your host.' });
+    if(urlState.clean === false || urlState.clean === 'partial') weak.push({ week:1, text:'Simplify your web address where possible — shorter, no extra codes — especially on anything you print or share.' });
+    QUESTIONS.forEach(function(item){
+      if(answers[item.id] === false){
+        var week = (item.id==='mobile'||item.id==='speed') ? 1
+                 : (item.id==='gbp'||item.id==='meta') ? 2
+                 : (item.id==='contact'||item.id==='social') ? 3 : 4;
+        weak.push({ week:week, text:item.fix });
+      }
+    });
+    return weak;
+  }
+
+  document.getElementById('score-btn').addEventListener('click', function(){
+    if(Object.keys(answers).length < 8){
+      hintEl.textContent = 'Please answer all 8 questions first — ' + (8 - Object.keys(answers).length) + ' to go.';
+      hintEl.style.color = 'var(--red)';
+      setTimeout(function(){ hintEl.style.color=''; }, 2500);
+      document.getElementById('audit').scrollIntoView({ behavior:'smooth', block:'start' });
+      return;
+    }
+    var areas = areaScores();
+    var total = areas.reduce(function(s,a){ return s + a.got; }, 0);
+    var ranUrl = urlState.https !== null;
+
+    /* Gauge */
+    var arc = document.getElementById('gauge-arc');
+    var CIRC = 402;
+    arc.style.transition = 'stroke-dashoffset .8s ease';
+    arc.setAttribute('stroke-dashoffset', String(CIRC - (CIRC * total / 100)));
+    arc.setAttribute('stroke', total >= 80 ? 'var(--green)' : (total >= 60 ? 'var(--amber)' : 'var(--red)'));
+    document.getElementById('score-num').textContent = total;
+
+    /* Grade */
+    var pill = document.getElementById('grade-pill');
+    var gtext = document.getElementById('grade-text');
+    if(total >= 80){
+      pill.className = 'grade-pill strong'; pill.textContent = 'Strong — 80+';
+      gtext.textContent = 'Your website\'s foundations are solid. The plan below focuses on turning that strength into more enquiries — better content, reviews and regular updates.';
+    } else if(total >= 60){
+      pill.className = 'grade-pill boost'; pill.textContent = 'Needs a boost — 60 to 79';
+      gtext.textContent = 'Your site works, but it\'s leaving customers on the table. A handful of targeted fixes — listed below — would make a real difference within a month.';
+    } else {
+      pill.className = 'grade-pill urgent'; pill.textContent = 'Needs urgent help — under 60';
+      gtext.textContent = 'Your website is likely costing you customers every week. Don\'t panic — the fixes below are the standard ones, and most can be done quickly. This is exactly what the boost packages are for.';
+    }
+    if(!ranUrl){
+      gtext.textContent += ' (Note: this score is from the self-audit only — run the Step 1 address check above and re-score for the complete picture.)';
+    }
+
+    /* Breakdown */
+    var bd = document.getElementById('breakdown');
+    bd.innerHTML = '';
+    areas.forEach(function(a){
+      var pct = a.max ? Math.round(a.got / a.max * 100) : 0;
+      var row = document.createElement('div');
+      row.className = 'bd-row';
+      var cls = pct >= 75 ? '' : (pct >= 45 ? 'mid' : 'low');
+      row.innerHTML = '<span></span><div class="bar"><i class="' + cls + '" style="width:' + pct + '%"></i></div><span class="pts">' + a.got + '/' + a.max + '</span>';
+      row.querySelector('span').textContent = a.name;
+      bd.appendChild(row);
+    });
+
+    /* Checklist */
+    var weak = weakItems();
+    var list = document.getElementById('boost-list');
+    list.innerHTML = '';
+    document.getElementById('boost-empty').style.display = weak.length ? 'none' : 'block';
+    weak.forEach(function(w){
+      var li = document.createElement('li'); li.textContent = w.text; list.appendChild(li);
+    });
+
+    /* 30-day plan */
+    var planEl = document.getElementById('plan');
+    planEl.innerHTML = '';
+    var weekTitles = { 1:'Week 1 — Fix the foundations', 2:'Week 2 — Get found on Google', 3:'Week 3 — Make contact effortless', 4:'Week 4 — Fresh content & measure' };
+    var weekDefaults = {
+      1:'Confirm the site loads fast on a phone, on mobile data. Fix anything broken.',
+      2:'Review your page titles and Google listing once more, and ask two happy customers for a Google review.',
+      3:'Double-check every page shows your phone / WhatsApp clearly, and post your website link on your social pages.',
+      4:'Add one fresh update (photo, offer or post) and check your visitor numbers to see what\'s working.'
+    };
+    [1,2,3,4].forEach(function(wk){
+      var items = weak.filter(function(w){ return w.week === wk; });
+      var div = document.createElement('div');
+      div.className = 'week';
+      var st = document.createElement('strong'); st.textContent = weekTitles[wk];
+      var sp = document.createElement('span');
+      sp.textContent = items.length ? items.map(function(i){ return i.text; }).join(' ') : weekDefaults[wk];
+      div.appendChild(st); div.appendChild(sp);
+      planEl.appendChild(div);
+    });
+
+    resultsEl.classList.add('show');
+    resultsEl.scrollIntoView({ behavior:'smooth', block:'start' });
+    window._boosterSummary = { total:total, weak:weak.map(function(w){ return w.text; }) };
+  });
+
+  /* Copy checklist */
+  document.getElementById('copy-btn').addEventListener('click', function(){
+    var s = window._boosterSummary;
+    if(!s) return;
+    var text = 'My Website Booster score: ' + s.total + '/100\n\nMy boost checklist:\n' +
+      (s.weak.length ? s.weak.map(function(t,i){ return (i+1) + '. ' + t; }).join('\n') : 'No weak areas found.');
+    var btn = this;
+    function done(){ btn.textContent = 'Copied ✓'; setTimeout(function(){ btn.textContent = 'Copy my checklist'; }, 2000); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch(e){}
+      document.body.removeChild(ta);
+    }
+  });
+
+  /* ============ ENQUIRY ============ */
+  var dlg = document.getElementById('enquiry');
+  var tierSelect = document.getElementById('f-tier');
+  var siteField = document.getElementById('f-site');
+
+  function openEnquiry(tier){
+    if(tier){
+      for(var i=0;i<tierSelect.options.length;i++){
+        if(tierSelect.options[i].text === tier){ tierSelect.selectedIndex = i; break; }
+      }
+    }
+    var raw = urlInput.value.trim();
+    if(raw && !siteField.value) siteField.value = raw;
+    document.getElementById('form-err').style.display = 'none';
+    if(typeof dlg.showModal === 'function') dlg.showModal();
+  }
+
+  document.querySelectorAll('.order-btn').forEach(function(b){
+    b.addEventListener('click', function(){ openEnquiry(b.getAttribute('data-tier')); });
+  });
+  document.getElementById('cta-order').addEventListener('click', function(){
+    var s = window._boosterSummary;
+    openEnquiry(s && s.total < 60 ? 'Growth — PKR 9,999' : null);
+  });
+  document.getElementById('dlg-cancel').addEventListener('click', function(){ dlg.close(); });
+
+  document.getElementById('enquiry-form').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var name = document.getElementById('f-name').value.trim();
+    var wa = document.getElementById('f-whatsapp').value.trim();
+    var site = siteField.value.trim();
+    var tier = tierSelect.value;
+    if(!name || !wa || !site){
+      document.getElementById('form-err').style.display = 'block';
+      return;
+    }
+    var s = window._boosterSummary;
+    var subject = 'Website Booster enquiry — ' + tier;
+    var body = 'Assalam-o-Alaikum,\n\nI would like to order the Website Booster package below.\n\n' +
+      'Name: ' + name + '\n' +
+      'WhatsApp number: ' + wa + '\n' +
+      'My website: ' + site + '\n' +
+      'Package: ' + tier + '\n' +
+      (s ? 'My free check score: ' + s.total + '/100\n' : '') +
+      '\nPlease confirm the work and the price. Thank you.';
+    var mailLink = document.createElement('a');
+    mailLink.href = 'mailto:nobleinterestinternational@gmail.com?subject=' +
+      encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    document.body.appendChild(mailLink);
+    mailLink.click();
+    document.body.removeChild(mailLink);
+    dlg.close();
+  });
+})();
+</script>
+</body>
+</html>
